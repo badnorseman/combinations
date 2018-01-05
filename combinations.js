@@ -37,7 +37,7 @@
  *   -> []
  */
 const k_combinations = (set, k) => {
-  const combs = [];
+  const results = [];
 
   // There is no way to take e.g. sets of 5 elements from
   // a set of 4.
@@ -53,9 +53,9 @@ const k_combinations = (set, k) => {
   // There is N 1-sized subsets in a N-sized set.
   if (k == 1) {
     for (let i = 0; i < set.length; i++) {
-      combs.push([set[i]]);
+      results.push([set[i]]);
     }
-    return combs;
+    return results;
   }
 
   // Assert {1 < k < set.length}
@@ -85,10 +85,10 @@ const k_combinations = (set, k) => {
     // For each (k-1)-combination we join it with the current
     // and store it to the set of k-combinations.
     for (let j = 0; j < tailcombs.length; j++) {
-      combs.push(head.concat(tailcombs[j]));
+      results.push(head.concat(tailcombs[j]));
     }
   }
-  return combs;
+  return results;
 };
 
 /**
@@ -108,16 +108,16 @@ const k_combinations = (set, k) => {
  *   -> [[1]]
  */
 const combinations = set => {
-  const combs = [];
+  const results = [];
 
   // Calculate all non-empty k-combinations
   for (let k = 1; k <= set.length; k++) {
     const k_combs = k_combinations(set, k);
     for (let i = 0; i < k_combs.length; i++) {
-      combs.push(k_combs[i]);
+      results.push(k_combs[i]);
     }
   }
-  return combs;
+  return results;
 };
 
 module.exports = {
