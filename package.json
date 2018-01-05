@@ -1,0 +1,14 @@
+{
+  "name": "combinations",
+  "version": "1.0.0",
+  "description": "Calculate combinations of n elements",
+  "main": "index.js",
+  "author": "Dan Jensen",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.0.4"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
