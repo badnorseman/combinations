@@ -1,19 +1,18 @@
 {
   "name": "combinations",
   "version": "1.0.0",
-  "description": "Calculate combinations of n elements",
+  "description": "Calculate combinations",
   "main": "index.js",
   "author": "Dan Jensen",
   "license": "MIT",
   "devDependencies": {
+    "husky": "^0.14.3",
     "jest": "^22.0.4",
-    "pre-commit": "^1.2.2"
+    "prettier": "^1.9.2",
+    "pretty-quick": "^1.1.0"
   },
   "scripts": {
-    "prettier": "prettier \"*/**/*.js\" --ignore-path ./.prettierignore --write && git add . && git status",
+    "precommit": "pretty-quick --staged",
     "test": "jest"
-  },
-  "pre-commit": [
-    "prettier"
-  ]
+  }
 }
