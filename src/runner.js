@@ -2,6 +2,7 @@
 const combinations = require("./combinations");
 
 let elements,
+  output,
   projects,
   set,
   total = 0;
