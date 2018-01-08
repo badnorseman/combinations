@@ -1,10 +1,7 @@
 // Example: node runner.js projects=14 elements=2 set="abcdefghijklmn".
 const combinations = require("./combinations");
 
-let elements,
-  output,
-  projects,
-  set,
+let set,
   total = 0;
 
 // Input from user
@@ -15,12 +12,12 @@ args.forEach(arg => {
   const key = arg.slice(0, index);
   const value = arg.slice(index + 1);
 
-  if (key === "elements" && !isNaN(value)) {
-    elements = value;
-  }
-  if (key === "projects" && !isNaN(value)) {
-    projects = value;
-  }
+  // if (key === "elements" && !isNaN(value)) {
+  //   elements = value;
+  // }
+  // if (key === "projects" && !isNaN(value)) {
+  //   projects = value;
+  // }
   if (key === "set") {
     if (isNaN(value)) {
       set = Array.from(value);
@@ -30,14 +27,14 @@ args.forEach(arg => {
   }
 });
 
-if (set && elements) {
+if (set) {
   console.log("****************************************");
 
-  for (let r = 0; r < projects; r++) {
+  for (let r = 0; r < set.length; r++) {
     const results = combinations(set, r);
     total = total + results.length;
     console.log(
-      "r = " + r + "  n = " + projects + "  combinations = ",
+      "r = " + r + "  n = " + set.length + "  combinations = ",
       results.length
     );
   }
@@ -46,6 +43,6 @@ if (set && elements) {
   console.log("****************************************");
 } else {
   console.log("****************************************");
-  console.log("parameters set, projects and elements are required");
+  console.log("set is required");
   console.log("****************************************");
 }
