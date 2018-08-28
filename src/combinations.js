@@ -1,15 +1,15 @@
 /**
  * Combinations
- * 
+ *
  * Get sized combinations of elements in a set
- * 
+ *
  * Usage:
  *   combinations(set, size)
- * 
+ *
  * Parameters:
  *   set: Array of objects of any type
  *   size: Size of combinations to search for
- * 
+ *
  * Return:
  *   Array of combinations where each combination has size
  *
